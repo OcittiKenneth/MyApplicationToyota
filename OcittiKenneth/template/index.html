@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TOYOTA</title>
+    <!-- css bootstrp link -->
+    <link rel="stylesheet" href="bootstrap.css">
+    <!-- external css link -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- main class of container-fluid div -->
+    <div class="container-fluid">
+        <!-- form starts here -->
+        <form action="toyota" method="POST" onsubmit="ValidData(); return false" class="form-group" name="myForms">
+            <!--the main row container all the elements -->
+            <div class="row">
+                <!--first row for customerId with 7 columns -->
+                <div class="col-md-7 row">
+
+                    <!--further dividing 7 into 11 and 1 -->
+                    <div class="col-md-1"></div>
+
+                    <!-- sub dividing 11 -->
+                    <div class="col-md-11" id="firstdiv" style="background-color: 	#DCDCDC">
+                        <fieldset class="form-group upperfieldset">
+                            <legend>Customer Information</legend>
+                            <!--row for customerId  -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="customerId" class="labels">Customer ID:</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input name="customerId" id="customer_id" class="idInput inputs" type="text" autofocus>
+                                    <span id="spanID" class="text-family"></span>
+                                </div>
+                            </div><br>
+                            <!--row for name -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="name" class="labels">Name:</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="name_id" class="mt-20 w-100 inputs" type="text" name="name">
+                                    <span id="span_name" class="text-family"></span>
+                                </div>
+                            </div><br>
+                            <!--row for state -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="state" class="labels">State:</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input id="state" class="region inputs" type="text" name="state" style="width: 65%">
+                                    <span id="span_state" class="text-family"></span>
+                                </div>
+                                <!-- row for retail_customer -->
+                                <div class="col-md-1"></div>
+                                <div class="col-md-5">
+                                    <input id="retailCustomer" type="checkbox" checked>Retail Customer
+                                </div>
+                            </div><br>
+
+                        </fieldset>
+                    </div>
+                </div>
+
+                <!-- second row for shipping with 5 columns-->
+                <div class="col-md-5 row">
+
+                    <!--further divicing 5 into 1 and 11 -->
+                    <div class="col-md-1"></div>
+
+                    <!-- sub dividing 11 -->
+                    <div class="col-md-11" id="shippig" style="background-color: #DCDCDC">
+                        <fieldset class="upperfieldset">
+                            <legend style="width: auto">Shipping</legend>
+                            <!-- row for ups and Fed Ex Ground -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-check-label" for="ups" style="margin-left: 30px"></label>
+                                    <input id="ups" class="form-check-input ups" type="radio" checked name="shippingMethod">UPS
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-check-label" for="fed"></label>
+                                    <input id="fedExGround" class="form-check-input fedExGround" name="shippingMethod" type="radio">Fed Ex Ground
+                                </div>
+                            </div><br><br><br>
+                            <!-- row for ups postal and Fed Ex Air -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-check-label" for="ups" style="margin-left: 30px;" class="radio"></label>
+                                    <input id="upsPostal" class="form-check-input portal" name="shippingMethod" type="radio">Ups Postal Air
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-check-label" for="fedair"></label>
+                                    <input id="fedExAir" class="form-check-input fedExAir" name="shippingMethod" type="radio">Fed Ex Air
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <!--second for part ordered with 7 columns -->
+                <div class="col-md-7 row mt-3">
+
+                    <!-- dividing 6 into 1 and 11 -->
+                    <div class="col-md-1 "></div>
+
+                    <!-- 11 for part ordered -->
+                    <div class="col-md-11" id="partOrdered" style="background-color: #DCDCDC">
+                        <fieldset>
+                            <legend>Part Ordered</legend>
+                            <!-- row for part number -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="number" class="labels">Part Number:</label>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <input id="partNumber" class="w-100 inputs" type="text" name="number">
+                                    <span id="partSpan" class="text-family"></span>
+                                </div>
+                            </div><br>
+                            <!-- row for description -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="desc" class="labels">Description:</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input id="describe" class="w-100 inputs" type="text" id="desc" name="desc">
+                                    <span id="descSpan" class="text-family"></span>
+                                </div>
+                            </div><br>
+                            <!-- row price per part and quantity -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="part" class="labels">Price per part($):</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <input style="text-align: right; width: 93%;" id="price" type="text" class="price inputs" name="price">
+                                    <span id="priceSpan" class="text-family"></span>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="qty" class="labels" style="margin-left: 40px; margin-top: 5px;">Quantity:</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input style="text-align: right" type="text" id="quantity" name="quantity" class="quantity inputs">
+                                    <span id="qtySpan" class="text-family"></span>
+                                </div>
+                            </div><br>
+                            <!-- row for oversize container -->
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <input name="oversize" id="oversize" class="oversize" type="checkbox">Oversize container
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <!-- second row for output with 6 columns  -->
+                <div class="col-md-5 row mt-3">
+
+                    <!-- dividing 6 into 1 and 11 -->
+                    <div class="col-md-1"></div>
+
+                    <!-- sub dividing 11 -->
+                    <div class="col-md-11" style="background-color: #DCDCDC">
+                        <fieldset>
+                            <legend>Output</legend>
+                            <!-- row for cost -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="cost" class="labels">Cost:</label>
+                                </div><br>
+                                <div class="col-md-6">
+                                    <input class="form-control bg-light cost" type="text" disabled style="text-align: right">
+                                </div>
+                            </div><br>
+                            <!-- row for sale tax -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="saletax" class="labels">Sale tax:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control bg-light tax" type="text" disabled style="text-align: right">
+                                </div>
+                            </div><br>
+                            <!-- row for shipping and handling -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="shippig" class="labels">Shipping and Handling:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control bg-light shipping-handling" type="text" disabled style="text-align: right">
+                                </div>
+                            </div><br>
+                            <!-- row for total -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="total" class="labels">Total:</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control bg-light total-cost" type="text" disabled style="text-align: right">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <!-- row with 12 columns for the buttons for compute, new order and exit 
+                and dividing it into 1 and 12  -->
+
+                <div class="col-md-1 row"></div>
+                <!-- dividing of 11 columns to fit for all the buttons -->
+                <div class="col-md-11 row">
+                    <div class="col-md-2">
+                        <input value="Compute" type="submit" class="btn btn-primary computing" id="compute"></input>
+                    </div>
+                    <div class="col-md-2">
+                        <input id="newOrder" value="New Order" onclick="reset();" class="btn btn-success" type="button">
+                    </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2">
+                        <input value="Exit" onclick="closeWindow();" class="btn btn-light eixt" type="button" id="exit" />
+                    </div>
+
+                </div>
+            </div>
+        </form>
+        <!-- link to our javascript file -->
+        <script src="validate.js" type="text/javascript"></script>
+</body>
+
+</html>
